@@ -1,15 +1,9 @@
-new_log = input().lower()
+#new_log = input().lower()
 file = "sample.txt"
+alert_word = "failed"
 
-if new_log == "new entry":
-    # Adds a new line to the log
-    with open(file, "a") as f:
-        f.write(f"\n{new_log}\n")
-
-    # Opens, reads, and closes file
-    with open(file, "r") as f:
-            print(f.read())
-else:
-     with open("sample.txt", "r") as f:
-            print(f.read())
-
+# Opens, reads, looks for specific alert word and closes file
+with open(file, "r") as f:
+        for line in f:
+                if alert_word.lower() in f:
+                    print(f"Found {alert_word} in sample.txt")
