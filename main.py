@@ -1,4 +1,9 @@
 # import re
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+file = os.getenv("FILE")
 
 alert_word_login = "failed password"
 # TODO: add function that will update the final count according to the activity observed. Perhaps a new function for each?
@@ -18,4 +23,4 @@ def failed__login_attempts(file):
                         print(f"Found '{alert_word_login.lower()}' in {line}")
             print(f"{count} failed login attempts.")
 
-failed__login_attempts("sample.txt")
+failed__login_attempts(file)
