@@ -2,7 +2,6 @@
 file = "sample.txt"
 alert_word_login = "failed password"
 # TODO: add function that will update the final count according to the activity observed. Perhaps a new function for each?
-# TODO: Make alert_word more specific so false flags like "backup failed" causes alert.
 # TODO: modify parser to extract information like:
 #Time: 08:22:11
 #Host: webserver01
