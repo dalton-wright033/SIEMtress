@@ -6,7 +6,6 @@ load_dotenv()
 file = os.getenv("FILE")
 
 alert_word_login = "failed password"
-# TODO: add function that will update the final count according to the activity observed. Perhaps a new function for each?
 # TODO: modify parser to extract information like: (Use RegEx)
 #Time: 08:22:11
 #Host: webserver01
