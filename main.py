@@ -1,4 +1,4 @@
-import re
+
 import os
 from dotenv import load_dotenv
 
@@ -7,15 +7,23 @@ file = os.getenv("FILE")
 
 alert_word_login = "failed password"
 
-# TODO: modify parser to extract information like: (Use string methods or RegEx?)
+# TODO: (Not marking as done until cleaned up) modify parser to extract information like: (Use string methods or RegEx?)
 #Time: 08:22:11
 #Host: webserver01
 #Service: sshd
 #IP: 203.0.113.55
-#TODO: Add other event alerts (i.e. )
-
+# TODO: Add other event alerts (i.e. )
+# TODO: Create variable for IP/port line to clean up code
+# TODO: Clean up magic numbers (e.g. part[8])
+# TODO: Consider: Can I eliminate duplicate .split() calls?; Can I make the output prettier?; Can I avoid hardcoded indexes where possible?;
+        # Can I gracefully handle a malformed line instead of crashing?
+# TODO: Consider either adding an input to designate target file, or adding a command line argument for target file
+        # file = sys.argv[1] (Example: python3 main.py sample.txt)
+        #   if [error]:
+                #print("Error: Please enter a file path")
 # Looks for failed login attempts in log file and counts instances.
-def failed__login_attempts(file):
+def failed__logins(file):
+    alert_word_login = "failed password"
     with open(file, "r") as f:
             count = 0
             for line in f:
@@ -33,4 +41,4 @@ def failed__login_attempts(file):
             print(f"{count} failed login attempts.")
                 
 
-failed__login_attempts(file)
+failed__logins(file)
