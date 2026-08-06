@@ -11,7 +11,7 @@ file = os.getenv("FILE")
 # TODO: Clean up magic numbers (e.g. part[8])
 # TODO: Consider: Can I eliminate duplicate .split() calls?; Can I make the output prettier?; Can I avoid hardcoded indexes where possible?;
         # Can I gracefully handle a malformed line instead of crashing?
-# TODO: Consider either adding an input to designate target file, or adding a command line argument for target file
+# TODO: Consider either adding an input to designate target file, or adding a command line argument for target file and **exception handling
         # file = sys.argv[1] (Example: python3 main.py sample.txt)
         #   if [error]:
                 #print("Error: Please enter a file path")
