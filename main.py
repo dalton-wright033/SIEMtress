@@ -1,15 +1,8 @@
-
-import os
-from dotenv import load_dotenv
 import re
 import sys
 
-load_dotenv()
 # get file path directly from command line.
 file = sys.argv[1]
-
-
-      
 
 # TODO: Consider using for  nested for loops to display output info in prettier form, such as a chart
 # TODO: Add other event alerts (i.e. successful logins, )
