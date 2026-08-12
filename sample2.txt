@@ -166,4 +166,4 @@ Aug 12 08:58:13 web01 systemd[1]: Started Daily apt upgrade and clean activities
 Aug 12 08:58:14 web01 systemd[1]: Finished Daily apt upgrade and clean activities.
 Aug 12 08:59:01 web01 CRON[19602]: (root) CMD (/usr/lib/cron/cleanup-temp)
 Aug 12 09:00:00 web01 systemd[1]: Starting Daily Cleanup of Temporary Directories...
-Aug 12 09:00:01 web01 systemd[1]: Finished Daily Cleanup of Temporary Directories.
+Aug 12 09:00:01 web01 systemd[1]: Finished Daily Cleanup of Temporary Directories. 

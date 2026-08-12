@@ -1,3 +1,4 @@
+# TODO: Make functions modular and call within main.py
 import re
 import sys
 import ipaddress
@@ -5,10 +6,6 @@ import ipaddress
 # get file path directly from command line.
 file = sys.argv[1]
 ipv4_pattern = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
-# TODO: Clean up magic numbers (e.g. part[8])
-# TODO: Consider: Can I eliminate duplicate .split() calls?; Can I make the output prettier?; Can I avoid hardcoded indexes where possible?;
-        # Can I gracefully handle a malformed line instead of crashing?
-# TODO: Make functions modular and call within main.py
 
 # Looks for failed login attempts in log file and counts instances.
 def failed_logins(file):
