@@ -4,16 +4,9 @@ import sys
 # get file path directly from command line.
 file = sys.argv[1]
 
-# TODO: Consider using for  nested for loops to display output info in prettier form, such as a chart
-# TODO: Add other event alerts (i.e. successful logins, )
-# TODO: Create variable for IP/port line to clean up code
 # TODO: Clean up magic numbers (e.g. part[8])
 # TODO: Consider: Can I eliminate duplicate .split() calls?; Can I make the output prettier?; Can I avoid hardcoded indexes where possible?;
         # Can I gracefully handle a malformed line instead of crashing?
-# TODO: Consider either adding an input to designate target file, or adding a command line argument for target file and **exception handling
-        # file = sys.argv[1] (Example: python3 main.py sample.txt)
-        #   if [error]:
-                #print("Error: Please enter a file path")
 
 # Looks for failed login attempts in log file and counts instances.
 def failed_logins(file):
