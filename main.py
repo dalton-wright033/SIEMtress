@@ -45,7 +45,7 @@ def failed_logins(file):
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
                             # Prints Alert info in clean rows
-                            print(f"Alert: {part[5]} {part[6]}")
+                            print(f"Alert: {alert_failed_password.title()}")
                             print(f"Date: {month} {day}")
                             print(f"Time: {time}")
                             print(f"Host: {host}")
@@ -94,7 +94,7 @@ def successful_logins(file):
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
                             # Prints Alert info in clean rows
-                            print(f"Alert: {part[5]} {part[6]}")
+                            print(f"Alert: {alert_login.title()}")
                             print(f"Date: {month} {day}")
                             print(f"Time: {time}")
                             print(f"Host: {host}")
@@ -143,8 +143,11 @@ def SSH_session(file):
                                 except ValueError:
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
+                            if not IPv4:
+                                print(f"No IPv4 address found on line: {line}")
+                                continue
                             # Prints Alert info in clean rows
-                            print(f"Alert: {part[5]} {part[6]}")
+                            print(f"Alert: {alert_SSH.title()}")
                             print(f"Date: {month} {day}")
                             print(f"Time: {time}")
                             print(f"Host: {host}")
