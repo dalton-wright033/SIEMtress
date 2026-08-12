@@ -32,7 +32,7 @@ def failed_logins(file):
                                 except ValueError:
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
-                            valid_IP = ipaddress.ip_address(IPv4[0])
+                            
                             port = line.split('from')[1].split()[2]
                             # Prints Alert info in clean rows
                             print(f"Alert: {part[5]} {part[6]}")
