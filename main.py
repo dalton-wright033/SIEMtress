@@ -2,9 +2,32 @@
 import re
 import sys
 import ipaddress
+from extract_event import extract_event
+from process_event import process_event
 
 # get file path directly from command line.
 file = sys.argv[1]
+alert_words = {
+     "failed password",
+     "accepted password",
+     "accepted publickey"
+}
+
+try:
+     with open(file, "r") as f:
+          for line in f:
+               for alert_word in alert_words:
+                if alert_word in line:
+                    extract_event(line)
+                    process_event(event)
+except FileNotFoundError:
+    print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
+except:
+    print("An error occurred when parsing failed login attempts: {e}")
+
+     
+
+
 ipv4_pattern = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
 
 # Looks for failed login attempts in log file and counts instances.
