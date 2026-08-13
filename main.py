@@ -41,6 +41,9 @@ def failed_logins(file):
                                 except ValueError:
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
+                            if not IPv4:
+                                print(f"No IPv4 address found on line: {line}")
+                                continue
                             # Prints Alert info in clean rows
                             print(f"Alert: {alert_failed_password.title()}")
                             print(f"Date: {month} {day}")
@@ -54,7 +57,7 @@ def failed_logins(file):
         print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
 
     except:
-        print("An error occurred when parsing failed login attempts. Please review file permissions and/or spelling")
+        print("An error occurred when parsing failed login attempts: {e}")
 
 #Find Successful Logins
 def successful_logins(file):
@@ -90,6 +93,9 @@ def successful_logins(file):
                                 except ValueError:
                                     print(f"Found invalid IP on {line}: {IPv4[0]}\n")
                                     continue
+                            if not IPv4:
+                                print(f"No IPv4 address found on line: {line}")
+                                continue
                             # Prints Alert info in clean rows
                             print(f"Alert: {alert_login.title()}")
                             print(f"Date: {month} {day}")
@@ -103,7 +109,7 @@ def successful_logins(file):
         print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
 
     except:
-         print("An error occurred when parsing successful logins. Please review file permissions and/or spelling")
+         print("An error occurred when parsing successful logins: {e}")
 
 
 #Find opened SSH sessions
@@ -156,7 +162,7 @@ def SSH_session(file):
         print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
 
     except:
-         print("An error occurred when parsing SSH logins. Please review file permissions and/or spelling")
+         print("An error occurred when parsing SSH logins: {e}")
 
 SSH_session(file)
 successful_logins(file)
