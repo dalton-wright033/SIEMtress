@@ -121,6 +121,7 @@ def SSH_session(file):
                 for line in f:
                         if alert_SSH.lower() in line.lower():
                             count += 1
+                            # TODO: Refactor line information into single function
                             part = line.split()
 
                             month = part[0]
@@ -160,7 +161,7 @@ def SSH_session(file):
                 print(f"** { count} SSH sessions started **\n")
     except FileNotFoundError:
         print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
-
+    # TODO: Improve error handling
     except:
          print("An error occurred when parsing SSH logins: {e}")
 
