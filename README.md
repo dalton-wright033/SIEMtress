@@ -15,6 +15,7 @@
     - Additonally, SIEMtress includes an event counter for faster review:
     - It is recomended to also add your ```alert_words``` variable to ```classify_event.py```
         - Such that it matches the format of:
+        
         ```if "failed password" in line:
                 return "Failed Logins"```
 
