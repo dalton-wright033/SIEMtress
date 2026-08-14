@@ -4,7 +4,6 @@ def process_event(event):
     if event["ipv4"]:
         event["ipv4"] = validate_ip(event["ipv4"]) 
         event["ip_status"] = "Valid"
-        print(event)
         if event["ipv4"] is None:
             event["ip_status"] = "Invalid"  
     else:    

@@ -1,193 +1,59 @@
-# TODO: Make functions modular and call within main.py
-import re
 import sys
-import ipaddress
 from extract_event import extract_event
 from process_event import process_event
+from classify_event import classify_event
 
-# get file path directly from command line.
-file = sys.argv[1]
+# Alert words mutable to find specific events in log. If adding or changing, update event type in classify.py
 alert_words = {
      "failed password",
      "accepted password",
      "accepted publickey"
 }
-
-try:
-     with open(file, "r") as f:
-          for line in f:
-               for alert_word in alert_words:
-                if alert_word in line:
-                    extract_event(line)
-                    process_event(event)
-except FileNotFoundError:
-    print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
-except:
-    print("An error occurred when parsing failed login attempts: {e}")
+def main():
+     # TODO: Update this later after CLI utility created
+    # Checks for proper tool usage in command line
+    if len(sys.argv) != 2:
+          print("usage: python main.py <file/file path>")
+          sys.exit(1)
+    
+    # Get file path directly from command line.
+    file = sys.argv[1]
+    try:
+        with open(file, "r") as f:
+            event_type_count = {"Failed Logins": 0,
+                                "Successful Logins": 0,
+                                "Successful Public Key Logins": 0}
+            for line in f:
+                for alert_word in alert_words:
+                    if alert_word in line.lower():
+                        event = extract_event(line)
+                        event = process_event(event)
+                        event_type = classify_event(line)
+                        if event_type:
+                            # Increment event types for a total count in output
+                            event_type_count[event_type] += 1
+                        # Neatly output flagged event info
+                        print(f"""
+Date: {event["month"]} {event["day"]}
+Time: {event["time"]}
+Host: {event["host"]}
+IP Address: {event["ipv4"]}
+IP Status: {event["ip_status"]}
+Port: {event["port"]}
+Username: {event["username"]}
+Event Type: {event_type}
+""")         
+            # Give total amount of flag types for quick review                  
+            print(f"Failed Logins: {event_type_count['Failed Logins']}, "
+                  f"Successful Logins: {event_type_count['Successful Logins']}, "
+                  f"Successful Public Key Logins: {event_type_count['Successful Public Key Logins']}")
+    except FileNotFoundError:
+        print(f"Could not open file: {file} - "
+              "Please be sure file path is correct "
+              "or user has privelege to access file.")
+    except Exception as e:
+        print(f"An error occurred when parsing failed login attempts: {e}")
 
      
-
-
-ipv4_pattern = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
-
-# Looks for failed login attempts in log file and counts instances.
-def failed_logins(file):
-    try:
-        alert_failed_password = "failed password"
-        with open(file, "r") as f:
-                count = 0
-                for line in f:
-                        if alert_failed_password.lower() in line.lower():
-                            count += 1
-                            part = line.split()
-
-                            month = part[0]
-                            day = part[1]
-                            time = part[2]
-                            host = part[3]
-
-                            port_index = part.index("port")
-
-                            port = part[port_index + 1]
-
-                            for_index = part.index("for")
-
-                            if part[for_index + 1] == "invalid":
-                                username = part[for_index + 3]
-                            else:
-                                username = part[for_index + 1]
-                            IPv4 = re.findall(ipv4_pattern, line)
-                            #Handles ValueError if IPv4 is invalid
-                            if IPv4:
-                                try:
-                                    valid_IP = ipaddress.ip_address(IPv4[0])
-                                except ValueError:
-                                    print(f"Found invalid IP on {line}: {IPv4[0]}\n")
-                                    continue
-                            if not IPv4:
-                                print(f"No IPv4 address found on line: {line}")
-                                continue
-                            # Prints Alert info in clean rows
-                            print(f"Alert: {alert_failed_password.title()}")
-                            print(f"Date: {month} {day}")
-                            print(f"Time: {time}")
-                            print(f"Host: {host}")
-                            print(f"User: {username}")
-                            print(f"IP: {valid_IP}:{port}\n")
-                                
-        print(f"** {count} failed login attempts **\n")
-    except FileNotFoundError:
-        print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
-
-    except:
-        print("An error occurred when parsing failed login attempts: {e}")
-
-#Find Successful Logins
-def successful_logins(file):
-    try:
-        alert_login = "accepted password"
-        with open(file, "r") as f:
-                count = 0
-                for line in f:
-                        if alert_login.lower() in line.lower():
-                            count += 1
-                            part = line.split()
-
-                            month = part[0]
-                            day = part[1]
-                            time = part[2]
-                            host = part[3]
-
-                            port_index = part.index("port")
-
-                            port = part[port_index + 1]
-
-                            for_index = part.index("for")
-
-                            if part[for_index + 1] == "invalid":
-                                username = part[for_index + 3]
-                            else:
-                                username = part[for_index + 1]
-                            IPv4 = re.findall(ipv4_pattern, line)
-                            #Handles ValueError if IPv4 is invalid
-                            if IPv4:
-                                try:
-                                    valid_IP = ipaddress.ip_address(IPv4[0])
-                                except ValueError:
-                                    print(f"Found invalid IP on {line}: {IPv4[0]}\n")
-                                    continue
-                            if not IPv4:
-                                print(f"No IPv4 address found on line: {line}")
-                                continue
-                            # Prints Alert info in clean rows
-                            print(f"Alert: {alert_login.title()}")
-                            print(f"Date: {month} {day}")
-                            print(f"Time: {time}")
-                            print(f"Host: {host}")
-                            print(f"User: {username}")
-                            print(f"IP: {valid_IP}:{port}\n")
-                            
-        print(f"** {count} successful login(s) **\n")
-    except FileNotFoundError:
-        print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
-
-    except:
-         print("An error occurred when parsing successful logins: {e}")
-
-
-#Find opened SSH sessions
-def SSH_session(file):
-    try:
-        alert_SSH = "accepted publickey"
-        with open(file, "r") as f:
-                count = 0               
-                for line in f:
-                        if alert_SSH.lower() in line.lower():
-                            count += 1
-                            # TODO: Refactor line information into single function
-                            part = line.split()
-
-                            month = part[0]
-                            day = part[1]
-                            time = part[2]
-                            host = part[3]
-
-                            port_index = part.index("port")
-
-                            port = part[port_index + 1]
-
-                            for_index = part.index("for")
-
-                            if part[for_index + 1] == "invalid":
-                                username = part[for_index + 3]
-                            else:
-                                username = part[for_index + 1]
-                            IPv4 = re.findall(ipv4_pattern, line)
-                            #Handles ValueError if IPv4 is invalid
-                            if IPv4:
-                                try:
-                                    valid_IP = ipaddress.ip_address(IPv4[0])
-                                except ValueError:
-                                    print(f"Found invalid IP on {line}: {IPv4[0]}\n")
-                                    continue
-                            if not IPv4:
-                                print(f"No IPv4 address found on line: {line}")
-                                continue
-                            # Prints Alert info in clean rows
-                            print(f"Alert: {alert_SSH.title()}")
-                            print(f"Date: {month} {day}")
-                            print(f"Time: {time}")
-                            print(f"Host: {host}")
-                            print(f"User: {username}")
-                            print(f"IP: {valid_IP}:{port}\n")
-                            
-                print(f"** { count} SSH sessions started **\n")
-    except FileNotFoundError:
-        print(f"Could not open file: {file} - Please besure file path is correct or user has privelege to access file.")
-    # TODO: Improve error handling
-    except:
-         print("An error occurred when parsing SSH logins: {e}")
-
-SSH_session(file)
-successful_logins(file)
-failed_logins(file)
+if __name__ == "__main__":
+     main()
