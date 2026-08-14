@@ -1,4 +1,4 @@
-from validate_ip import validate_ip
+from .validate_ip import validate_ip
 
 def process_event(event):
     if event["ipv4"]:

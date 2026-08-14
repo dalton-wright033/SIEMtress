@@ -1,7 +1,7 @@
 import sys
-from extract_event import extract_event
-from process_event import process_event
-from classify_event import classify_event
+from .extract_event import extract_event
+from .process_event import process_event
+from .classify_event import classify_event
 
 # Alert words mutable to find specific events in log. If adding or changing, update event type in classify.py
 alert_words = {
