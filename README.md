@@ -16,7 +16,7 @@
     - It is recomended to also add your ```alert_words``` variable to ```classify_event.py```
         - Such that it matches the format of:
         
-        ```if "failed password" in line:
-                return "Failed Logins"```
+        ```if "failed password" in line:```
+            ```return "Failed Logins"```
 
 - It is encouraged to make changes to SIEMtress to fit your need and feel free to submit a PR to contribute to this project!
