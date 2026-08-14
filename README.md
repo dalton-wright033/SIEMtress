@@ -18,5 +18,5 @@
 ```python
     if "failed password" in line:
         return "Failed Logins"
-    ```
+```
 - It is encouraged to make changes to SIEMtress to fit your need and feel free to submit a PR to contribute to this project!
