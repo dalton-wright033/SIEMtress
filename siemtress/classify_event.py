@@ -1,3 +1,5 @@
+# Classifies event type to allow counting of total events
+
 def classify_event(line):
     line = line.lower()
 
