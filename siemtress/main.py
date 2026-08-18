@@ -10,7 +10,6 @@ alert_words = {
      "accepted publickey"
 }
 def main():
-     # TODO: Update this later after CLI utility created
     # Checks for proper tool usage in command line
     if len(sys.argv) != 2:
           print("usage: python main.py <file/file path>")
@@ -19,6 +18,7 @@ def main():
     # Get file path directly from command line.
     file = sys.argv[1]
     try:
+        # opens file and searches lines for keywords in alert_words
         with open(file, "r") as f:
             event_type_count = {"Failed Logins": 0,
                                 "Successful Logins": 0,
