@@ -1,6 +1,5 @@
 import ipaddress
 
-
 def validate_ip(ip):
     try:
         valid_IP = ipaddress.ip_address(ip)
