@@ -6,18 +6,18 @@ def extract_event(line):
     extracted_data = {}
 
     part = line.split()
-
+    # TODO: replace with regex to avoid hardcoded indexes
     extracted_data["month"] = part[0]
     extracted_data["day"] = part[1]
     extracted_data["time"] = part[2]
     extracted_data["host"] = part[3]
     ipv4 = re.findall(ipv4_pattern, line)
-    
+    # Handles if ipv4 info is present in extraced line or not
     if ipv4:
         extracted_data["ipv4"] = ipv4[0]
     else:    
         extracted_data["ipv4"] = None
-
+    # Handles if port info is present in extraced line or not
     if "port" in part:
         port_index = part.index("port")
         extracted_data["port"] = part[port_index + 1]
